@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-image: url('images/bg2.jpg');
+            background-size: 100% 100%;
+        }
+        .calcy-centre{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form{
+            width: 400px;
+            height: 520px;
+            box-shadow: 0 0 10px 1px grey;
+        }
+
+        #app_name{
+            width: inherit;
+            padding: 2px 0  2px 10px;
+            font-size: 0.8rem;
+            background-color: #303030;
+            color: white;
+            border: none;
+            font-family: 'Open sans' , 'sans-serif';
+        }
+        #display_box{
+            width: inherit; 
+            height: 100px;
+            background-color: #303030;
+            font-size: 2rem;
+            color:white;
+            border: none;
+            outline: none;
+            text-align: right;   
+        }
+        .layer-1{
+            width: inherit;
+            height: 90px;
+            display: flex;
+            justify-content: center;
+
+        }
+        .layer-2{
+            width: inherit;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+
+        }
+        input{ flex: 1;font-size: 1.4rem; color:white; border: 1px solid #504f4f; outline: none;}
+
+        .main-num{
+            background-color: #101011;
+            color: white;
+        }
+
+        .opert{
+            background-color: #303030;
+        }
+
+        #clearbutton{
+            font-size: 1rem;
+            
+        }
+        input:hover{
+            background-color: #474747;
+            border: 1px solid grey;
+        }
+    </style>
+</head>
+<body>
+    <div class="calcy-centre">
+    <form name="calcy">
+        <input type="text" name="" value="Calculator" id="app_name">
+        <input type="text" name="answers" value="" id="display_box">
+        <div class="layer-2">
+            <input type="button" name="" value="c" class="opert" id="clearbutton" onclick="calcy.answers.value = '' ">
+
+            <input type="button" name="" value="=" class="opert"  onclick="calcy.answers.value = eval(calcy.answers.value)">
+        </div>
+
+        <div class="layer-1">
+            <input type="button" name="" class="main-num" value="7" onclick="calcy.answers.value +='7' ">
+            <input type="button" name="" class="main-num" value="8" onclick="calcy.answers.value +='8' ">
+            <input type="button" name="" class="main-num" value="9" onclick="calcy.answers.value +='9' "> 
+            <input type="button" name="" class="opert" value="*" onclick="calcy.answers.value += '*' ">
+        </div>
+        <div class="layer-1">
+            <input type="button" name="" class="main-num" value="4" onclick="calcy.answers.value += '4' ">
+            <input type="button" name="" class="main-num" value="5" onclick="calcy.answers.value += '5' ">
+            <input type="button" name="" class="main-num" value="6" onclick="calcy.answers.value += '6' ">
+            <input type="button" name="" class="opert" value="-" onclick="calcy.answers.value += '-' ">
+        </div>
+        <div class="layer-1">
+            <input type="button" name="" value="1" class="main-num" onclick="calcy.answers.value += '1' ">
+            <input type="button" name="" value="2" class="main-num" onclick="calcy.answers.value += '2' ">
+            <input type="button" name="" value="3" class="main-num" onclick="calcy.answers.value += '3' ">
+            <input type="button" name="" value="+" class="opert" onclick="calcy.answers.value +='+' ">
+        </div>
+        <div class="layer-1">
+            <input type="button" name="" class="opert" value="." onclick="calcy.answers.value += '.' ">
+            <input type="button" name="" class="main-num" value="0" onclick="calcy.answers.value += '0' ">
+            <input type="button" name="" class="opert" value="%" onclick="calcy.answers.value += '%' ">
+            <input type="button" name="" class="opert" value="/" onclick="calcy.answers.value += '/' ">
+        </div>
+
+
+
+    </form>
+    </div>
+</body>
+</html>
